@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">7MinutesWorkout</string>
+    <string name="image">start image</string>
+    <string name="tvTitle">GET READY FOR</string>
+    <string name="tvUpcomingLabel">UPCOMING EXERCISE: </string>
+    <string name="tvUpComingExerciseName">Exercise Name</string>
+    <string name="end">END</string>
+    <string name="you_have_done_the_work_out">You have completed the work out!</string>
+    <string name="finish">FINISH</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="start_image">start image</string>
+    <string name="calculator">Calculator</string>
+    <string name="bmi">BMI</string>
+    <string name="start">START</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="your_bmi">YOUR BMI</string>
+    <string name="height_in_cm">HEIGHT (in cm)</string>
+    <string name="weight_in_kg">WEIGHT (in kg)</string>
+    <string name="feet">Feet</string>
+    <string name="inch">Inch</string>
+    <string name="weight_in_kg_">WEIGHT (in pounds)</string>
+    <string name="history">History</string>
+
+</resources>
