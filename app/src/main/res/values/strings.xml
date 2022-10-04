@@ -23,5 +23,7 @@
     <string name="inch">Inch</string>
     <string name="weight_in_kg_">WEIGHT (in pounds)</string>
     <string name="history">History</string>
+    <string name="no_data_available">NO DATA AVAILABLE</string>
+    <string name="exerc_se_completed">EXERCİSE COMPLETED</string>
 
 </resources>

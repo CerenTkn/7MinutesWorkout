@@ -1,10 +1,14 @@
 package com.cerentekin.a7minutesworkout.view
 
+import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.cerentekin.a7minutesworkout.R
+import com.cerentekin.a7minutesworkout.adapter.HistoryAdapter
 import com.cerentekin.a7minutesworkout.databinding.ActivityHistoryBinding
 import com.cerentekin.a7minutesworkout.room.HistoryDao
 import com.cerentekin.a7minutesworkout.room.WorkoutApp
@@ -35,8 +39,24 @@ class HistoryActivity : AppCompatActivity() {
         Log.e("Date: ","getAllCompletedDates run")
         lifecycleScope.launch{
             historyDao.fetchAllDates().collect{ allCompletedDatesList ->
-                for (i in allCompletedDatesList){
-                    Log.e("Date: ", "" + i.date)
+                if (allCompletedDatesList.isNotEmpty()){
+                    binding.tvHistory.visibility = View.VISIBLE
+                     binding.rvHistory.visibility = View.VISIBLE
+                    binding.tvNoDataAvailable.visibility = View.INVISIBLE
+
+                    binding.rvHistory.layoutManager = LinearLayoutManager(this@HistoryActivity)
+
+                    val dates = ArrayList<String>()
+                    for (date in allCompletedDatesList){
+                         dates.add(date.date)
+                    }
+                    val historyAdapter = HistoryAdapter(dates)
+                    binding.rvHistory.adapter = historyAdapter
+
+                }else{
+                    binding.tvHistory.visibility = View.GONE
+                    binding.rvHistory.visibility = View.GONE
+                    binding.tvNoDataAvailable.visibility = View.VISIBLE
                 }
             }
         }
